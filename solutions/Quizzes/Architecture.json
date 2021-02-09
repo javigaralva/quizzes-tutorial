@@ -26,5 +26,17 @@
     }
   ],
   "references": [
+    {
+      "fromSystemName": "QuizzesAdminWebFrontend",
+      "toSystemName": "QuizzesMicroservice"
+    },
+    {
+      "fromSystemName": "QuizzesGameMobileApp",
+      "toSystemName": "QuizzesMicroservice"
+    },
+    {
+      "fromSystemName": "QuizzesMicroservice",
+      "toSystemName": "QuizzesDatabase"
+    }
   ]
 }
