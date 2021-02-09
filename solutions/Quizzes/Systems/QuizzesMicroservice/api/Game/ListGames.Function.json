@@ -1,0 +1,50 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "args",
+        "type": "ArgsListGames"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Return",
+        "expression": "RdsSelect(QuizzesDatabase.Game, This(), [RdsConditional(gameId == ^args.gameId, !IsNull(^args.gameId)), RdsConditional(topicId == ^args.topicId, !IsNull(^args.topicId))], gameId, ^args.offset, ^args.limit)"
+      }
+    ],
+    "typeReturn": "list(Game)",
+    "variables": []
+  },
+  "routing": {
+    "method": "GET",
+    "parameters": [
+      {
+        "bind": "args.gameId",
+        "in": "Query",
+        "name": "gameId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.topicId",
+        "in": "Query",
+        "name": "topicId",
+        "remarks": "For filtering."
+      },
+      {
+        "bind": "args.offset",
+        "in": "Query",
+        "name": "offset",
+        "remarks": "Requested index for start the results to be provided in response."
+      },
+      {
+        "bind": "args.limit",
+        "in": "Query",
+        "name": "limit",
+        "remarks": "Requested number results to be provided in response."
+      }
+    ],
+    "path": "/games",
+    "remarks": "Allows to get a list of Games.",
+    "responses": []
+  }
+}
