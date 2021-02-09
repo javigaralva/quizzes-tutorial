@@ -1,4 +1,30 @@
 {
-  "systems": [],
-  "references": []
+  "systems": [
+    {
+      "name": "QuizzesAdminWebFrontend",
+      "type": "WebFrontend",
+      "x": 344,
+      "y": 398
+    },
+    {
+      "name": "QuizzesDatabase",
+      "type": "RelationalDatabase",
+      "x": 974,
+      "y": 225
+    },
+    {
+      "name": "QuizzesGameMobileApp",
+      "type": "MobileApp",
+      "x": 345,
+      "y": 131
+    },
+    {
+      "name": "QuizzesMicroservice",
+      "type": "Microservice",
+      "x": 635,
+      "y": 233
+    }
+  ],
+  "references": [
+  ]
 }
