@@ -1,6 +1,16 @@
 {
   "items": [
     {
+      "systemName": "QuizzesMicroservice",
+      "action": "build",
+      "parameters": [
+        {
+          "configParameterName": "TotalRoundsPerGame",
+          "value": 5
+        }
+      ]
+    },
+    {
       "systemName": "QuizzesDatabase",
       "action": "mock",
       "mockInitialization": {
