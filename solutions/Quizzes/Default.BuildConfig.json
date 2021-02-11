@@ -3,6 +3,7 @@
     {
       "systemName": "QuizzesMicroservice",
       "action": "build",
+      "buildPort": 8888,
       "parameters": [
         {
           "configParameterName": "TotalRoundsPerGame",
