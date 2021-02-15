@@ -4,7 +4,31 @@
   "root": {
     "children": [
       {
-        "name": "button1",
+        "align": "center",
+        "bold": true,
+        "color": "default",
+        "cssClass": "blz-padding-top-large",
+        "name": "labelWelcome",
+        "size": "large",
+        "text": "Welcome to",
+        "widget": "Label"
+      },
+      {
+        "align": "center",
+        "bold": true,
+        "color": "primary",
+        "name": "labelQuizzesGame",
+        "size": "x-large",
+        "text": "Quizzes Game",
+        "widget": "Label"
+      },
+      {
+        "align": "center",
+        "color": "primary",
+        "cssClass": "blz-padding-top-large",
+        "name": "buttonCreateGame",
+        "size": "large",
+        "text": "CREATE NEW GAME",
         "widget": "Button"
       }
     ],
