@@ -1,6 +1,12 @@
 {
   "eventsAndFunctions": [],
-  "model": [],
+  "model": [
+    {
+      "name": "gameId",
+      "required": true,
+      "type": "integer"
+    }
+  ],
   "root": {
     "children": [
       {
@@ -13,6 +19,8 @@
     "cssClass": "blz-area-default",
     "layout": "container"
   },
-  "routing": null,
+  "routing": {
+    "path": "/round-game"
+  },
   "unused": []
 }
