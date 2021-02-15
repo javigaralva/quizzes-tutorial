@@ -4,13 +4,28 @@
   "root": {
     "children": [
       {
-        "color": "default",
-        "name": "label1",
-        "text": "CmpStartGame",
-        "widget": "Label"
+        "cssClass": "blz-padding-top-large",
+        "label": "NAME *",
+        "name": "textboxPlayerName",
+        "widget": "TextBox"
+      },
+      {
+        "dataFormat": "key-value",
+        "label": "TOPIC *",
+        "mode": "single",
+        "name": "comboboxTopic",
+        "widget": "ComboBox"
+      },
+      {
+        "align": "center",
+        "color": "success",
+        "name": "buttonStartGame",
+        "size": "large",
+        "text": "START GAME",
+        "widget": "Button"
       }
     ],
-    "cssClass": "blz-area-default",
+    "cssClass": "blz-padding-top-large blz-area-default",
     "layout": "container"
   },
   "routing": {
