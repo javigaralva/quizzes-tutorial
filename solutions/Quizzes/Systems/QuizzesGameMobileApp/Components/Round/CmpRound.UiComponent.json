@@ -1,10 +1,69 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "gameId",
+            "variableName": "gameId"
+          },
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.StartRound( gameId )",
+            "variableName": "gameState"
+          },
+          {
+            "command": "Set",
+            "expression": "[ \n\t[ 1, gameState.currentQuiz.answer1 ],\n    [ 2, gameState.currentQuiz.answer2 ],\n    [ 3, gameState.currentQuiz.answer3 ],\n    [ 4, gameState.currentQuiz.answer4 ]\n]",
+            "variableName": "answers"
+          },
+          {
+            "command": "SetValue",
+            "expression": "{\n\tcurrentRound: gameState.currentRound,\n    totalRounds: gameState.totalRounds,\n    question: gameState.currentQuiz.question\n}",
+            "widgetName": "htmlrendererQuestion"
+          },
+          {
+            "command": "Load",
+            "expression": "answers",
+            "widgetName": "optiongroupAnswers"
+          },
+          {
+            "command": "WriteModel",
+            "expression": "answers",
+            "modelVariableName": "answers"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "gameId",
+            "type": "integer"
+          },
+          {
+            "name": "gameState",
+            "type": "QuizzesMicroservice.GameState"
+          },
+          {
+            "name": "answers",
+            "type": "list( tuple( integer, string ) )"
+          }
+        ]
+      },
+      "name": "main_init"
+    }
+  ],
   "model": [
     {
       "name": "gameId",
       "required": true,
       "type": "integer"
+    },
+    {
+      "name": "answers",
+      "required": false,
+      "type": "list( tuple( integer, string ) )"
     }
   ],
   "root": {
