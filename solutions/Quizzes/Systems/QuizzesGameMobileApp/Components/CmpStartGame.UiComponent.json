@@ -1,5 +1,31 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.ListTopics( null )",
+            "variableName": "topics"
+          },
+          {
+            "command": "Load",
+            "expression": "Map( topics, [ topicId, name ] )",
+            "widgetName": "comboboxTopic"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "topics",
+            "type": "list( QuizzesMicroservice.Topic )"
+          }
+        ]
+      },
+      "name": "main_init"
+    }
+  ],
   "model": [],
   "root": {
     "children": [
