@@ -24,6 +24,81 @@
         ]
       },
       "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "GetValue",
+            "variableName": "playerName",
+            "widgetName": "textboxPlayerName"
+          },
+          {
+            "children": [
+              {
+                "command": "AlertMessage",
+                "expressionMessage": "\"Please, provide a name\"",
+                "expressionTitle": "\"Required field\"",
+                "severity": "error"
+              },
+              {
+                "command": "Return",
+                "expression": "null"
+              }
+            ],
+            "command": "If",
+            "expression": "IsNull( playerName )"
+          },
+          {
+            "command": "GetValue",
+            "variableName": "topicId",
+            "widgetName": "comboboxTopic"
+          },
+          {
+            "children": [
+              {
+                "command": "AlertMessage",
+                "expressionMessage": "\"Please, select a topic\"",
+                "expressionTitle": "\"Required field\"",
+                "severity": "error"
+              },
+              {
+                "command": "Return",
+                "expression": "null"
+              }
+            ],
+            "command": "If",
+            "expression": "IsNull( topicId )"
+          },
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.StartGame( { playerName: playerName, topicId: topicId } )",
+            "variableName": "gameId"
+          },
+          {
+            "command": "Navigate",
+            "expressionStartModel": "{ gameId: gameId }",
+            "uiComponentName": "CmpRound"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "playerName",
+            "type": "string"
+          },
+          {
+            "name": "topicId",
+            "type": "integer"
+          },
+          {
+            "name": "gameId",
+            "type": "integer"
+          }
+        ]
+      },
+      "name": "buttonStartGame_click"
     }
   ],
   "model": [],
