@@ -1,5 +1,21 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "{}",
+            "uiComponentName": "CmpStartGame"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "buttonCreateGame_click"
+    }
+  ],
   "model": [],
   "root": {
     "children": [
