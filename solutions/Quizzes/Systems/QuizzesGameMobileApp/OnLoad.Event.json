@@ -8,19 +8,14 @@
         "variableName": "culture"
       },
       {
-        "command": "LoadResource",
-        "expressionPath": "\"/MenuMain.json\"",
-        "variableName": "menu"
-      },
-      {
         "command": "Launch",
         "expressionCulture": "^culture",
-        "expressionIcon": "\"logo.svg\"",
-        "expressionMainMenu": "^menu",
+        "expressionIcon": "\"quiz-color.svg\"",
+        "expressionMainMenu": "null",
         "expressionSubTitle": "null",
-        "expressionTitle": "\"QuizzesGameMobileApp\"",
+        "expressionTitle": "\"Quizzes Game\"",
         "expressionToolsMenu": "null",
-        "search": "enable",
+        "search": "disable",
         "uiComponentName": "CmpHome"
       }
     ],
@@ -29,10 +24,6 @@
       {
         "name": "culture",
         "type": "Culture"
-      },
-      {
-        "name": "menu",
-        "type": "list(MenuItem)"
       }
     ]
   }
