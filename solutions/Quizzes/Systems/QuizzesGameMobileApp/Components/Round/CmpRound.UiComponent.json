@@ -10,14 +10,32 @@
   "root": {
     "children": [
       {
-        "color": "default",
-        "name": "label1",
-        "text": "CmpRound",
-        "widget": "Label"
+        "cssClass": "blz-padding-right-large blz-padding-left-large",
+        "htmlTemplate": "<center>\n  <h6>\n    <i>\n      Question {{currentRound}} / {{totalRounds}}\n    </i>\n  </h6>\n  <h3>\n    <b>\n      {{question}}\n    </b>\n  </h3>\n</center>",
+        "name": "htmlrendererQuestion",
+        "widget": "HtmlRenderer"
+      },
+      {
+        "cssClass": "blz-padding-top-large blz-padding-bottom-large blz-border-top blz-border-bottom",
+        "dataFormat": "key-value",
+        "display": "normal",
+        "mode": "single",
+        "name": "optiongroupAnswers",
+        "widget": "OptionGroup"
+      },
+      {
+        "align": "center",
+        "color": "primary",
+        "cssClass": "blz-padding-top-large",
+        "name": "buttonSendAnswer",
+        "size": "large",
+        "text": "NEXT",
+        "widget": "Button"
       }
     ],
-    "cssClass": "blz-area-default",
-    "layout": "container"
+    "cssClass": "blz-padding-top-large blz-area-default",
+    "layout": "container",
+    "verticalSeparation": "large"
   },
   "routing": {
     "path": "/round-game"
