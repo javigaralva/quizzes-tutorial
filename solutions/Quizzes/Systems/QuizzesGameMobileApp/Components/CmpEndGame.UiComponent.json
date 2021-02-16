@@ -23,6 +23,11 @@
             "command": "SetValue",
             "expression": "{ score: gameState.score, totalRounds: gameState.totalRounds }",
             "widgetName": "htmlrendererScore"
+          },
+          {
+            "command": "WriteModel",
+            "expression": "gameState.playerName",
+            "modelVariableName": "playerName"
           }
         ],
         "typeReturn": "any",
@@ -44,13 +49,23 @@
         "parameters": [],
         "statements": [
           {
+            "command": "ReadModel",
+            "modelVariableName": "playerName",
+            "variableName": "playerName"
+          },
+          {
             "command": "Navigate",
-            "expressionStartModel": "{}",
+            "expressionStartModel": "{ playerName: playerName }",
             "uiComponentName": "CmpStartGame"
           }
         ],
         "typeReturn": "any",
-        "variables": []
+        "variables": [
+          {
+            "name": "playerName",
+            "type": "string"
+          }
+        ]
       },
       "name": "buttonPlayAgain_click"
     },
@@ -138,6 +153,11 @@
       "name": "gameId",
       "required": true,
       "type": "integer"
+    },
+    {
+      "name": "playerName",
+      "required": false,
+      "type": "string"
     }
   ],
   "root": {
