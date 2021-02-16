@@ -13,6 +13,8 @@
     "cssClass": "blz-area-default",
     "layout": "container"
   },
-  "routing": null,
+  "routing": {
+    "path": "/round-game-result"
+  },
   "unused": []
 }
