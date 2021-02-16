@@ -4,10 +4,55 @@
   "root": {
     "children": [
       {
-        "color": "default",
-        "name": "label1",
-        "text": "CmpRoundResult",
-        "widget": "Label"
+        "children": [
+          {
+            "align": "center",
+            "color": "success",
+            "icon": "correct.svg",
+            "name": "iconCorrect",
+            "size": "xx-large",
+            "widget": "Icon"
+          },
+          {
+            "align": "center",
+            "bold": true,
+            "color": "success",
+            "name": "labelCorrect",
+            "size": "x-large",
+            "text": "Correct!",
+            "widget": "Label"
+          }
+        ],
+        "layout": "container",
+        "name": "correctContainer"
+      },
+      {
+        "children": [
+          {
+            "align": "center",
+            "color": "error",
+            "icon": "incorrect.svg",
+            "name": "iconIncorrect",
+            "size": "xx-large",
+            "widget": "Icon"
+          },
+          {
+            "align": "center",
+            "bold": true,
+            "color": "error",
+            "name": "labelIncorrect",
+            "size": "x-large",
+            "text": "Incorrect!",
+            "widget": "Label"
+          },
+          {
+            "htmlTemplate": "<center>\n  <h4>\n    The correct answer was:\n  </h4>\n  <h3>\n    {{correctAnswer}}\n  </h3>\n</center>",
+            "name": "htmlrendererCorrectAnswer",
+            "widget": "HtmlRenderer"
+          }
+        ],
+        "layout": "container",
+        "name": "incorrectContainer"
       }
     ],
     "cssClass": "blz-area-default",
