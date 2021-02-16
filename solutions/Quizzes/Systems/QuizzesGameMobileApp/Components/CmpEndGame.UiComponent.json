@@ -1,6 +1,145 @@
 {
-  "eventsAndFunctions": [],
-  "model": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "gameId",
+            "variableName": "gameId"
+          },
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.GetGameState( gameId )",
+            "variableName": "gameState"
+          },
+          {
+            "command": "SetValue",
+            "expression": "{ message: getFinalMessageByScore( gameState.score, gameState.totalRounds ) }",
+            "widgetName": "htmlrendererFinalMessage"
+          },
+          {
+            "command": "SetValue",
+            "expression": "{ score: gameState.score, totalRounds: gameState.totalRounds }",
+            "widgetName": "htmlrendererScore"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "gameId",
+            "type": "integer"
+          },
+          {
+            "name": "gameState",
+            "type": "QuizzesMicroservice.GameState"
+          }
+        ]
+      },
+      "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "{}",
+            "uiComponentName": "CmpStartGame"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "buttonPlayAgain_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "userScore",
+            "type": "integer"
+          },
+          {
+            "name": "maxScore",
+            "type": "integer"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "( userScore / maxScore ) * 100",
+            "variableName": "score"
+          },
+          {
+            "children": [
+              {
+                "command": "Return",
+                "expression": "\"Perfect! Congratulations!\""
+              }
+            ],
+            "command": "If",
+            "expression": "score >= 100"
+          },
+          {
+            "children": [
+              {
+                "command": "Return",
+                "expression": "\"Well done!\""
+              }
+            ],
+            "command": "ElseIf",
+            "expression": "score >= 75"
+          },
+          {
+            "children": [
+              {
+                "command": "Return",
+                "expression": "\"Not bad!\""
+              }
+            ],
+            "command": "ElseIf",
+            "expression": "score >= 50"
+          },
+          {
+            "children": [
+              {
+                "command": "Return",
+                "expression": "\"Keep trying!\""
+              }
+            ],
+            "command": "ElseIf",
+            "expression": "score >= 25"
+          },
+          {
+            "children": [
+              {
+                "command": "Return",
+                "expression": "\"Concentrate and try again!\""
+              }
+            ],
+            "command": "Else"
+          }
+        ],
+        "typeReturn": "string",
+        "variables": [
+          {
+            "name": "score",
+            "type": "decimal"
+          }
+        ]
+      },
+      "name": "getFinalMessageByScore"
+    }
+  ],
+  "model": [
+    {
+      "name": "gameId",
+      "required": true,
+      "type": "integer"
+    }
+  ],
   "root": {
     "children": [
       {
