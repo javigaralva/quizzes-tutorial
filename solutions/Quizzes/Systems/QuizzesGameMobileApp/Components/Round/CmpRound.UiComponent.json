@@ -131,6 +131,87 @@
         ]
       },
       "name": "buttonSendAnswer_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "userAnswer",
+            "type": "integer"
+          },
+          {
+            "name": "response",
+            "type": "QuizzesMicroservice.EndRoundResponse"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "response.correctAnswer == userAnswer",
+            "variableName": "wasCorrect"
+          },
+          {
+            "command": "ReadModel",
+            "modelVariableName": "answers",
+            "variableName": "answers"
+          },
+          {
+            "command": "Set",
+            "expression": "FindFirst( answers, First( This() ) == ^response.correctAnswer )[1]",
+            "variableName": "correctAnswer"
+          },
+          {
+            "command": "Navigate",
+            "expressionStartModel": "{ wasCorrect: wasCorrect, correctAnswer: correctAnswer }",
+            "uiComponentName": "CmpRoundResult"
+          },
+          {
+            "children": [
+              {
+                "command": "ReadConfigParameter",
+                "configParameterName": "MsWaitWhenCorrectAnswer",
+                "variableName": "msWaitTime"
+              }
+            ],
+            "command": "If",
+            "expression": "wasCorrect"
+          },
+          {
+            "children": [
+              {
+                "command": "ReadConfigParameter",
+                "configParameterName": "MsWaitWhenIncorrectAnswer",
+                "variableName": "msWaitTime"
+              }
+            ],
+            "command": "Else"
+          },
+          {
+            "command": "Sleep",
+            "expressionMilliseconds": "msWaitTime"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "wasCorrect",
+            "type": "boolean"
+          },
+          {
+            "name": "answers",
+            "type": "list( tuple( integer, string ) )"
+          },
+          {
+            "name": "correctAnswer",
+            "type": "string"
+          },
+          {
+            "name": "msWaitTime",
+            "type": "integer"
+          }
+        ]
+      },
+      "name": "showRoundResult"
     }
   ],
   "model": [
