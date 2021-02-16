@@ -4,10 +4,25 @@
   "root": {
     "children": [
       {
-        "color": "default",
-        "name": "label1",
-        "text": "CmpEndGame",
-        "widget": "Label"
+        "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
+        "htmlTemplate": "<center>\n  <h2>\n    <b>{{message}}</b>\n  </h2>\n</center>",
+        "name": "htmlrendererFinalMessage",
+        "widget": "HtmlRenderer"
+      },
+      {
+        "cssClass": "blz-padding-top-large",
+        "htmlTemplate": "<center>\n  <h3>\n    Your score was:\n  </h3>\n  <h1>\n    {{score}} / {{totalRounds}}\n  </h1>\n</center>",
+        "name": "htmlrendererScore",
+        "widget": "HtmlRenderer"
+      },
+      {
+        "align": "center",
+        "color": "success",
+        "cssClass": "blz-padding-top-large",
+        "name": "buttonPlayAgain",
+        "size": "large",
+        "text": "PLAY AGAIN",
+        "widget": "Button"
       }
     ],
     "cssClass": "blz-area-default",
