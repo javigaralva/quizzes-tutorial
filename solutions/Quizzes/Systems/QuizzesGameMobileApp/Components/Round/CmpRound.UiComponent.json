@@ -52,6 +52,85 @@
         ]
       },
       "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "gameId",
+            "variableName": "gameId"
+          },
+          {
+            "command": "GetValue",
+            "variableName": "userAnswer",
+            "widgetName": "optiongroupAnswers"
+          },
+          {
+            "children": [
+              {
+                "command": "AlertMessage",
+                "expressionMessage": "\"Please, select an answer\"",
+                "expressionTitle": "\"Please, select an answer\"",
+                "severity": "error"
+              },
+              {
+                "command": "Return",
+                "expression": "null"
+              }
+            ],
+            "command": "If",
+            "expression": "IsNull( userAnswer )"
+          },
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.EndRound( { gameId: gameId, userAnswer: userAnswer } )",
+            "variableName": "response"
+          },
+          {
+            "command": "Execute",
+            "expression": "showRoundResult( userAnswer, response )"
+          },
+          {
+            "children": [
+              {
+                "command": "Navigate",
+                "expressionStartModel": "{ gameId: gameId }",
+                "uiComponentName": "CmpEndGame"
+              }
+            ],
+            "command": "If",
+            "expression": "response.isGameEnded"
+          },
+          {
+            "children": [
+              {
+                "command": "Navigate",
+                "expressionStartModel": "{ gameId: gameId }",
+                "uiComponentName": "CmpRound"
+              }
+            ],
+            "command": "Else"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "gameId",
+            "type": "integer"
+          },
+          {
+            "name": "userAnswer",
+            "type": "integer"
+          },
+          {
+            "name": "response",
+            "type": "QuizzesMicroservice.EndRoundResponse"
+          }
+        ]
+      },
+      "name": "buttonSendAnswer_click"
     }
   ],
   "model": [
