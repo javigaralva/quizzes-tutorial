@@ -5,6 +5,16 @@
         "parameters": [],
         "statements": [
           {
+            "command": "ReadModel",
+            "modelVariableName": "playerName",
+            "variableName": "playerName"
+          },
+          {
+            "command": "SetValue",
+            "expression": "playerName",
+            "widgetName": "textboxPlayerName"
+          },
+          {
             "command": "Set",
             "expression": "QuizzesMicroservice.ListTopics( null )",
             "variableName": "topics"
@@ -20,6 +30,10 @@
           {
             "name": "topics",
             "type": "list( QuizzesMicroservice.Topic )"
+          },
+          {
+            "name": "playerName",
+            "type": "string"
           }
         ]
       },
@@ -101,7 +115,13 @@
       "name": "buttonStartGame_click"
     }
   ],
-  "model": [],
+  "model": [
+    {
+      "name": "playerName",
+      "required": false,
+      "type": "string"
+    }
+  ],
   "root": {
     "children": [
       {

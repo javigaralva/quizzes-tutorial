@@ -235,7 +235,7 @@
         "widget": "HtmlRenderer"
       },
       {
-        "cssClass": "blz-padding-top-large blz-padding-bottom-large blz-border-top blz-border-bottom",
+        "cssClass": "blz-padding-top-large blz-padding-left-large blz-padding-bottom-large blz-border-top blz-border-bottom",
         "dataFormat": "key-value",
         "display": "normal",
         "mode": "single",
