@@ -15,12 +15,12 @@
       {
         "command": "Launch",
         "expressionCulture": "^culture",
-        "expressionIcon": "\"logo.svg\"",
+        "expressionIcon": "\"quiz-color.svg\"",
         "expressionMainMenu": "^menu",
         "expressionSubTitle": "null",
-        "expressionTitle": "\"QuizzesAdminWebFrontend\"",
+        "expressionTitle": "\"Quizzes Manager\"",
         "expressionToolsMenu": "null",
-        "search": "enable",
+        "search": "disable",
         "uiComponentName": "CmpHome"
       }
     ],
