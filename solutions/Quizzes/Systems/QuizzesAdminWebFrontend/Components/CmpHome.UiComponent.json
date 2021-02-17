@@ -1,5 +1,66 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "null",
+            "uiComponentName": "CmpTopicsAdmin"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "iconTopicsAdmin_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "null",
+            "uiComponentName": "CmpListQuizzesGames"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "iconGamesQuizzes_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "null",
+            "uiComponentName": "CmpQuizzesAdmin"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "iconQuizzesAdmin_click"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Navigate",
+            "expressionStartModel": "null",
+            "uiComponentName": "CmpRanking"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "iconRanking_click"
+    }
+  ],
   "model": [],
   "root": {
     "alignItems": "center",
