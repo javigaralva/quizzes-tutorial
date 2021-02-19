@@ -4,14 +4,46 @@
   "root": {
     "children": [
       {
-        "color": "default",
-        "name": "label1",
-        "text": "CmpTopicsAdmin",
-        "widget": "Label"
+        "children": [
+          {
+            "align": "left",
+            "color": "default",
+            "cssClass": "blz-padding-top-large blz-padding-left-large blz-padding-bottom-large",
+            "icon": "topic.svg",
+            "name": "iconMain",
+            "size": "x-large",
+            "widget": "Icon"
+          },
+          {
+            "align": "left",
+            "bold": true,
+            "color": "default",
+            "cssClass": "blz-padding-left-large",
+            "dock": "previous",
+            "name": "labelTitle",
+            "size": "large",
+            "text": "Topics administration",
+            "widget": "Label"
+          }
+        ],
+        "cssClass": "blz-border-top blz-border-right blz-border-left blz-border-bottom blz-border-radius",
+        "layout": "container"
+      },
+      {
+        "children": [
+          {
+            "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
+            "name": "gridTopics",
+            "widget": "Grid"
+          }
+        ],
+        "cssClass": "blz-border-top blz-border-right blz-border-left blz-border-bottom blz-border-radius blz-cast-shadow",
+        "layout": "container"
       }
     ],
-    "cssClass": "blz-area-default",
-    "layout": "container"
+    "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-area-default",
+    "layout": "container",
+    "verticalSeparation": "large"
   },
   "routing": {
     "path": "/topics-admin"
