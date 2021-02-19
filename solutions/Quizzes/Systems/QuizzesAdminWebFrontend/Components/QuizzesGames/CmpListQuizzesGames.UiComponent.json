@@ -32,10 +32,60 @@
       {
         "children": [
           {
+            "columns": [
+              {
+                "align": "center",
+                "bindText": "gameId",
+                "format": "Number",
+                "header": "Game Id",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "playerName",
+                "header": "Player Name",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "startTime",
+                "format": "DateTime",
+                "header": "Start Time",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "endTime",
+                "format": "DateTime",
+                "header": "End Time",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "score",
+                "format": "Number",
+                "header": "Score",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "topic.name",
+                "header": "Topic Name",
+                "size": 1
+              },
+              {
+                "align": "center",
+                "bindText": "totalTime",
+                "format": "Number",
+                "header": "Total Time",
+                "size": 1
+              }
+            ],
             "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
             "name": "gridGamesPlayed",
             "noResultsMessage": "No games played.",
             "pageSize": 20,
+            "typeName": "QuizzesMicroservice.Game",
             "widget": "Grid",
             "withFiltering": true,
             "withPaging": true
