@@ -87,6 +87,49 @@
         ]
       },
       "name": "gridGamesPlayed_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordData",
+            "type": "any"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "recordData",
+            "variableName": "record"
+          },
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "result"
+          },
+          {
+            "command": "Set",
+            "expression": "GetFormatedElapsedTime( record.totalTime )",
+            "variableName": "result.text"
+          },
+          {
+            "command": "Return",
+            "expression": "result"
+          }
+        ],
+        "typeReturn": "RenderColumnResult",
+        "variables": [
+          {
+            "name": "result",
+            "type": "RenderColumnResult"
+          },
+          {
+            "name": "record",
+            "type": "QuizzesMicroservice.Game"
+          }
+        ]
+      },
+      "name": "gridGamesPlayed_renderColumn_totalTime"
     }
   ],
   "model": [],
@@ -167,6 +210,7 @@
                 "bindText": "totalTime",
                 "format": "Number",
                 "header": "Total Time",
+                "key": "totalTime",
                 "size": 1
               }
             ],
