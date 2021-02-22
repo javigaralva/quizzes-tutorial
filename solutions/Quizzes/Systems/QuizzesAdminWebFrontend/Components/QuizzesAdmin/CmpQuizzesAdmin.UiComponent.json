@@ -141,6 +141,13 @@
       {
         "children": [
           {
+            "actions": [
+              {
+                "icon": "add.svg",
+                "key": "add",
+                "text": "Add Quiz"
+              }
+            ],
             "columns": [
               {
                 "align": "left",
@@ -196,6 +203,18 @@
             "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
             "name": "gridQuizzes",
             "pageSize": 20,
+            "recordActions": [
+              {
+                "icon": "edit.svg",
+                "key": "edit",
+                "text": "Edit"
+              },
+              {
+                "icon": "remove.svg",
+                "key": "remove",
+                "text": "Remove"
+              }
+            ],
             "typeName": "QuizzesMicroservice.Quiz",
             "widget": "Grid",
             "withFiltering": true,
