@@ -1,5 +1,114 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "[]",
+            "variableName": "gridQuizzesFilterConfigs"
+          },
+          {
+            "command": "Push",
+            "expressionItem": "{ key: \"f1\", label: \"Quiz Id\", type: \"numeric\" }",
+            "variableNameList": "gridQuizzesFilterConfigs"
+          },
+          {
+            "command": "Push",
+            "expressionItem": "{ key: \"f2\", label: \"Topic Name\", type: \"text\" }",
+            "variableNameList": "gridQuizzesFilterConfigs"
+          },
+          {
+            "command": "Push",
+            "expressionItem": "{ key: \"f3\", label: \"Question\", type: \"text\" }",
+            "variableNameList": "gridQuizzesFilterConfigs"
+          },
+          {
+            "command": "Push",
+            "expressionItem": "{ key: \"f4\", label: \"Answer\", type: \"text\" }",
+            "variableNameList": "gridQuizzesFilterConfigs"
+          },
+          {
+            "command": "SetFilterConfigs",
+            "expression": "^gridQuizzesFilterConfigs",
+            "widgetName": "gridQuizzes"
+          },
+          {
+            "command": "Refresh",
+            "widgetName": "gridQuizzes"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "gridQuizzesFilterConfigs",
+            "type": "list(FilterConfig)"
+          }
+        ]
+      },
+      "name": "gridQuizzes_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "args",
+            "type": "ArgsLoadRecords"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "args1"
+          },
+          {
+            "command": "Set",
+            "expression": "Map(FindFirst(^args.filters, key == \"f1\"), value)",
+            "variableName": "args1.quizId"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.offset",
+            "variableName": "args1.offset"
+          },
+          {
+            "command": "Set",
+            "expression": "^args.limit",
+            "variableName": "args1.limit"
+          },
+          {
+            "command": "Set",
+            "expression": "Map(FindFirst(^args.filters, key == \"f2\"), value)",
+            "variableName": "args1.topicName"
+          },
+          {
+            "command": "Set",
+            "expression": "Map(FindFirst(^args.filters, key == \"f3\"), value)",
+            "variableName": "args1.question"
+          },
+          {
+            "command": "Set",
+            "expression": "Map(FindFirst(^args.filters, key == \"f4\"), value)",
+            "variableName": "args1.answer"
+          },
+          {
+            "command": "Return",
+            "expression": "QuizzesMicroservice.ListQuizzes(^args1)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "args1",
+            "type": "QuizzesMicroservice.ArgsListQuizzes"
+          }
+        ]
+      },
+      "name": "gridQuizzes_loadRecords"
+    }
+  ],
   "model": [],
   "root": {
     "children": [
@@ -32,9 +141,65 @@
       {
         "children": [
           {
+            "columns": [
+              {
+                "align": "left",
+                "bindText": "quizId",
+                "format": "Number",
+                "header": "Quiz Id",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "question",
+                "header": "Question",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "answer1",
+                "header": "Answer1",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "answer2",
+                "header": "Answer2",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "answer3",
+                "header": "Answer3",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "answer4",
+                "header": "Answer4",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "correctAnswer",
+                "format": "Number",
+                "header": "Correct Answer",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "topic.name",
+                "header": "Topic Name",
+                "size": 1
+              }
+            ],
             "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
             "name": "gridQuizzes",
-            "widget": "Grid"
+            "pageSize": 20,
+            "typeName": "QuizzesMicroservice.Quiz",
+            "widget": "Grid",
+            "withFiltering": true,
+            "withPaging": true
           }
         ],
         "cssClass": "blz-border-top blz-border-right blz-border-left blz-border-bottom blz-border-radius blz-cast-shadow",
