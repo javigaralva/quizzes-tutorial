@@ -1,5 +1,44 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Refresh",
+            "widgetName": "gridTopics"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": []
+      },
+      "name": "gridTopics_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "args",
+            "type": "ArgsLoadRecords"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Return",
+            "expression": "QuizzesMicroservice.ListTopics(^args1)"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "args1",
+            "type": "QuizzesMicroservice.ArgsListTopics"
+          }
+        ]
+      },
+      "name": "gridTopics_loadRecords"
+    }
+  ],
   "model": [],
   "root": {
     "children": [
@@ -32,13 +71,31 @@
       {
         "children": [
           {
+            "actions": [],
+            "columns": [
+              {
+                "align": "left",
+                "bindText": "topicId",
+                "format": "Number",
+                "header": "Topic Id",
+                "size": 1
+              },
+              {
+                "align": "left",
+                "bindText": "name",
+                "header": "Name",
+                "size": 1
+              }
+            ],
             "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
             "name": "gridTopics",
+            "typeName": "QuizzesMicroservice.Topic",
             "widget": "Grid"
           }
         ],
         "cssClass": "blz-border-top blz-border-right blz-border-left blz-border-bottom blz-border-radius blz-cast-shadow",
-        "layout": "container"
+        "layout": "container",
+        "size": "third"
       }
     ],
     "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large blz-area-default",
