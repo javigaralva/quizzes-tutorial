@@ -37,6 +37,57 @@
         ]
       },
       "name": "gridTopics_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"add.svg\"",
+            "expressionStartModel": "null",
+            "expressionTitle": "\"Add new Topic\"",
+            "mode": "window",
+            "size": "small",
+            "uiComponentName": "CmpTopicEditor"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "modelEdited.instance",
+                "variableName": "newTopic"
+              },
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.CreateTopic( newTopic )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridTopics"
+              },
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "modelEdited"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "modelEdited",
+            "type": "any"
+          },
+          {
+            "name": "newTopic",
+            "type": "QuizzesMicroservice.Topic"
+          }
+        ]
+      },
+      "name": "gridTopics_handlerAction_add"
     }
   ],
   "model": [],
