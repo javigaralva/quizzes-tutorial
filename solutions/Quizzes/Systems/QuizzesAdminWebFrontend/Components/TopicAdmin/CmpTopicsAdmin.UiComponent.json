@@ -71,7 +71,13 @@
       {
         "children": [
           {
-            "actions": [],
+            "actions": [
+              {
+                "icon": "add.svg",
+                "key": "add",
+                "text": "Add Topic"
+              }
+            ],
             "columns": [
               {
                 "align": "left",
