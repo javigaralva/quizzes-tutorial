@@ -95,6 +95,18 @@
             ],
             "cssClass": "blz-padding-top-large blz-padding-right-large blz-padding-left-large",
             "name": "gridTopics",
+            "recordActions": [
+              {
+                "icon": "edit.svg",
+                "key": "edit",
+                "text": "Edit"
+              },
+              {
+                "icon": "remove.svg",
+                "key": "remove",
+                "text": "Remove"
+              }
+            ],
             "typeName": "QuizzesMicroservice.Topic",
             "widget": "Grid"
           }
