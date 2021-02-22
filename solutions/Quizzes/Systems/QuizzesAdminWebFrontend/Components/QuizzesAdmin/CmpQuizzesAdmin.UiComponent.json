@@ -315,7 +315,7 @@
             ],
             "columns": [
               {
-                "align": "left",
+                "align": "center",
                 "bindText": "quizId",
                 "format": "Number",
                 "header": "Quiz Id",
@@ -352,14 +352,14 @@
                 "size": 1
               },
               {
-                "align": "left",
+                "align": "center",
                 "bindText": "correctAnswer",
                 "format": "Number",
                 "header": "Correct Answer",
                 "size": 1
               },
               {
-                "align": "left",
+                "align": "center",
                 "bindText": "topic.name",
                 "header": "Topic Name",
                 "size": 1

@@ -245,14 +245,14 @@
             ],
             "columns": [
               {
-                "align": "left",
+                "align": "center",
                 "bindText": "topicId",
                 "format": "Number",
                 "header": "Topic Id",
                 "size": 1
               },
               {
-                "align": "left",
+                "align": "center",
                 "bindText": "name",
                 "header": "Name",
                 "size": 1
