@@ -154,6 +154,54 @@
         ]
       },
       "name": "gridTopics_handlerRecordAction_edit"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordRef",
+            "type": "string"
+          },
+          {
+            "name": "arg",
+            "type": "string"
+          }
+        ],
+        "statements": [
+          {
+            "command": "ReadRecord",
+            "expressionRecordRef": "recordRef",
+            "variableName": "topic",
+            "widgetName": "gridTopics"
+          },
+          {
+            "command": "ConfirmMessage",
+            "expressionMessage": "\"Are you sure you want to delete this topic?\"",
+            "expressionTitle": "\"Delete Topic\""
+          },
+          {
+            "children": [
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.DeleteTopic( topic.topicId )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridTopics"
+              }
+            ],
+            "command": "OnYes"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "topic",
+            "type": "QuizzesMicroservice.Topic"
+          }
+        ]
+      },
+      "name": "gridTopics_handlerRecordAction_remove"
     }
   ],
   "model": [],
