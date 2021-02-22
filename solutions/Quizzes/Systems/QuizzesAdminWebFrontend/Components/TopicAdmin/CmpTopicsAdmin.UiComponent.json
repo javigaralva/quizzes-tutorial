@@ -88,6 +88,72 @@
         ]
       },
       "name": "gridTopics_handlerAction_add"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordRef",
+            "type": "string"
+          },
+          {
+            "name": "arg",
+            "type": "string"
+          }
+        ],
+        "statements": [
+          {
+            "command": "ReadRecord",
+            "expressionRecordRef": "recordRef",
+            "variableName": "topic",
+            "widgetName": "gridTopics"
+          },
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"edit.svg\"",
+            "expressionStartModel": "{ instance: topic }",
+            "expressionTitle": "\"Edit Topic\"",
+            "mode": "window",
+            "size": "small",
+            "uiComponentName": "CmpTopicEditor"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "modelEdited.instance",
+                "variableName": "topic"
+              },
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.UpdateTopic( topic.topicId, topic )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridTopics"
+              },
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "modelEdited"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "modelEdited",
+            "type": "any"
+          },
+          {
+            "name": "topic",
+            "type": "QuizzesMicroservice.Topic"
+          }
+        ]
+      },
+      "name": "gridTopics_handlerRecordAction_edit"
     }
   ],
   "model": [],
