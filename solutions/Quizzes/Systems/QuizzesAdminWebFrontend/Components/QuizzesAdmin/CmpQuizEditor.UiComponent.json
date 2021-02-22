@@ -1,5 +1,36 @@
 {
-  "eventsAndFunctions": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "QuizzesMicroservice.ListTopics( null )",
+            "variableName": "topicList"
+          },
+          {
+            "command": "Load",
+            "expression": "Map( topicList, [ topicId, name ] )",
+            "widgetName": "cboTopicId"
+          },
+          {
+            "command": "Load",
+            "expression": "[ [ 1, 1 ], [ 2, 2 ], [ 3, 3 ], [ 4, 4 ] ]",
+            "widgetName": "cboCorrectAnswer"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "topicList",
+            "type": "list( QuizzesMicroservice.Topic )"
+          }
+        ]
+      },
+      "name": "main_init"
+    }
+  ],
   "model": [
     {
       "name": "instance",
