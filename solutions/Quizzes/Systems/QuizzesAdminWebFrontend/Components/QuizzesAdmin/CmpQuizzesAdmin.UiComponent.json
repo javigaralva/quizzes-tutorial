@@ -107,6 +107,171 @@
         ]
       },
       "name": "gridQuizzes_loadRecords"
+    },
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"add.svg\"",
+            "expressionStartModel": "null",
+            "expressionTitle": "\"Add new Quiz\"",
+            "mode": "window",
+            "size": "default",
+            "uiComponentName": "CmpQuizEditor"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "modelEdited.instance",
+                "variableName": "newQuiz"
+              },
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.CreateQuiz( newQuiz )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridQuizzes"
+              },
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "modelEdited"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "modelEdited",
+            "type": "any"
+          },
+          {
+            "name": "newQuiz",
+            "type": "QuizzesMicroservice.Quiz"
+          }
+        ]
+      },
+      "name": "gridQuizzes_handlerAction_add"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordRef",
+            "type": "string"
+          },
+          {
+            "name": "arg",
+            "type": "string"
+          }
+        ],
+        "statements": [
+          {
+            "command": "ReadRecord",
+            "expressionRecordRef": "recordRef",
+            "variableName": "quiz",
+            "widgetName": "gridQuizzes"
+          },
+          {
+            "buttons": "ok-cancel",
+            "command": "Open",
+            "expressionIcon": "\"edit.svg\"",
+            "expressionStartModel": "{ instance: quiz }",
+            "expressionTitle": "\"Edit Quiz\"",
+            "mode": "window",
+            "size": "default",
+            "uiComponentName": "CmpQuizEditor"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "modelEdited.instance",
+                "variableName": "quiz"
+              },
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.UpdateQuiz( quiz.quizId, quiz )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridQuizzes"
+              },
+              {
+                "command": "CloseCurrent"
+              }
+            ],
+            "command": "OnOk",
+            "variableNameOpenedModel": "modelEdited"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "modelEdited",
+            "type": "any"
+          },
+          {
+            "name": "quiz",
+            "type": "QuizzesMicroservice.Quiz"
+          }
+        ]
+      },
+      "name": "gridQuizzes_handlerRecordAction_edit"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordRef",
+            "type": "string"
+          },
+          {
+            "name": "arg",
+            "type": "string"
+          }
+        ],
+        "statements": [
+          {
+            "command": "ReadRecord",
+            "expressionRecordRef": "recordRef",
+            "variableName": "quiz",
+            "widgetName": "gridQuizzes"
+          },
+          {
+            "command": "ConfirmMessage",
+            "expressionMessage": "\"Are you sure you want to delete this quiz?\"",
+            "expressionTitle": "\"Delete Quiz\""
+          },
+          {
+            "children": [
+              {
+                "command": "Execute",
+                "expression": "QuizzesMicroservice.DeleteQuiz( quiz.quizId )"
+              },
+              {
+                "command": "Refresh",
+                "widgetName": "gridQuizzes"
+              }
+            ],
+            "command": "OnYes"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "quiz",
+            "type": "QuizzesMicroservice.Quiz"
+          }
+        ]
+      },
+      "name": "gridQuizzes_handlerRecordAction_remove"
     }
   ],
   "model": [],
