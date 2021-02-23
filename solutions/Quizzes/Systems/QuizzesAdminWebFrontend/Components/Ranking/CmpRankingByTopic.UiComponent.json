@@ -1,6 +1,100 @@
 {
-  "eventsAndFunctions": [],
-  "model": [],
+  "eventsAndFunctions": [
+    {
+      "algorithm": {
+        "parameters": [],
+        "statements": [
+          {
+            "command": "ReadModel",
+            "modelVariableName": "instance",
+            "variableName": "instance"
+          },
+          {
+            "command": "Set",
+            "expression": "First( instance )",
+            "variableName": "firstGame"
+          },
+          {
+            "command": "Set",
+            "expression": "firstGame.topic.name",
+            "variableName": "topicName"
+          },
+          {
+            "command": "SetValue",
+            "expression": "topicName",
+            "widgetName": "fieldTopicName"
+          },
+          {
+            "command": "Set",
+            "expression": "[]",
+            "variableName": "ranking"
+          },
+          {
+            "command": "Set",
+            "expression": "1",
+            "variableName": "position"
+          },
+          {
+            "children": [
+              {
+                "command": "Push",
+                "expressionItem": "{ position: position, game: game }",
+                "variableNameList": "ranking"
+              },
+              {
+                "command": "Set",
+                "expression": "position + 1",
+                "variableName": "position"
+              }
+            ],
+            "command": "ForEach",
+            "expressionList": "instance",
+            "variableNameItem": "game"
+          },
+          {
+            "command": "SetValue",
+            "expression": "ranking",
+            "widgetName": "gridRanking"
+          }
+        ],
+        "typeReturn": "any",
+        "variables": [
+          {
+            "name": "instance",
+            "type": "list( QuizzesMicroservice.Game )"
+          },
+          {
+            "name": "firstGame",
+            "type": "QuizzesMicroservice.Game"
+          },
+          {
+            "name": "topicName",
+            "type": "string"
+          },
+          {
+            "name": "game",
+            "type": "QuizzesMicroservice.Game"
+          },
+          {
+            "name": "ranking",
+            "type": "list( RankingItem )"
+          },
+          {
+            "name": "position",
+            "type": "integer"
+          }
+        ]
+      },
+      "name": "main_init"
+    }
+  ],
+  "model": [
+    {
+      "name": "instance",
+      "required": false,
+      "type": "list( QuizzesMicroservice.Game )"
+    }
+  ],
   "root": {
     "children": [
       {
