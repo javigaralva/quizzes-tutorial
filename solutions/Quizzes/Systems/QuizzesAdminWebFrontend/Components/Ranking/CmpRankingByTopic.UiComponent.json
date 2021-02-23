@@ -199,6 +199,49 @@
         ]
       },
       "name": "gridRanking_renderColumn_position"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordData",
+            "type": "any"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "recordData",
+            "variableName": "record"
+          },
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "result"
+          },
+          {
+            "command": "Set",
+            "expression": "GetFormatedElapsedTime( record.game.totalTime )",
+            "variableName": "result.text"
+          },
+          {
+            "command": "Return",
+            "expression": "result"
+          }
+        ],
+        "typeReturn": "RenderColumnResult",
+        "variables": [
+          {
+            "name": "result",
+            "type": "RenderColumnResult"
+          },
+          {
+            "name": "record",
+            "type": "RankingItem"
+          }
+        ]
+      },
+      "name": "gridRanking_renderColumn_totalTime"
     }
   ],
   "model": [
@@ -246,6 +289,7 @@
             "bindText": "game.totalTime",
             "format": "Number",
             "header": "Game Total Time",
+            "key": "totalTime",
             "size": 1
           }
         ],
