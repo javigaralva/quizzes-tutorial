@@ -86,6 +86,119 @@
         ]
       },
       "name": "main_init"
+    },
+    {
+      "algorithm": {
+        "parameters": [
+          {
+            "name": "recordData",
+            "type": "any"
+          }
+        ],
+        "statements": [
+          {
+            "command": "Set",
+            "expression": "recordData",
+            "variableName": "record"
+          },
+          {
+            "command": "Set",
+            "expression": "\"\"",
+            "variableName": "icon"
+          },
+          {
+            "command": "Set",
+            "expression": "\"\"",
+            "variableName": "text"
+          },
+          {
+            "command": "Switch",
+            "expression": "record.position"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "\"ranking-1.svg\"",
+                "variableName": "icon"
+              }
+            ],
+            "command": "Case",
+            "expression": "1"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "\"ranking-2.svg\"",
+                "variableName": "icon"
+              }
+            ],
+            "command": "Case",
+            "expression": "2"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "\"ranking-3.svg\"",
+                "variableName": "icon"
+              }
+            ],
+            "command": "Case",
+            "expression": "3"
+          },
+          {
+            "children": [
+              {
+                "command": "Set",
+                "expression": "ConvertToString( record.position )",
+                "variableName": "text"
+              }
+            ],
+            "command": "Default"
+          },
+          {
+            "command": "Set",
+            "expression": "{}",
+            "variableName": "result"
+          },
+          {
+            "command": "Set",
+            "expression": "icon",
+            "variableName": "result.icon"
+          },
+          {
+            "command": "Set",
+            "expression": "text",
+            "variableName": "result.text"
+          },
+          {
+            "command": "Return",
+            "expression": "result"
+          }
+        ],
+        "typeReturn": "RenderColumnResult",
+        "variables": [
+          {
+            "name": "result",
+            "type": "RenderColumnResult"
+          },
+          {
+            "name": "record",
+            "type": "RankingItem"
+          },
+          {
+            "name": "icon",
+            "type": "string"
+          },
+          {
+            "name": "text",
+            "type": "string"
+          }
+        ]
+      },
+      "name": "gridRanking_renderColumn_position"
     }
   ],
   "model": [
@@ -112,6 +225,7 @@
             "bindText": "position",
             "format": "Number",
             "header": "Position",
+            "key": "position",
             "size": 1
           },
           {
