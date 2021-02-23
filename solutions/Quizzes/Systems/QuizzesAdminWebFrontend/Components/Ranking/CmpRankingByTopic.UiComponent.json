@@ -274,21 +274,21 @@
           {
             "align": "center",
             "bindText": "game.playerName",
-            "header": "Game Player Name",
+            "header": "Player Name",
             "size": 1
           },
           {
             "align": "center",
             "bindText": "game.score",
             "format": "Number",
-            "header": "Game Score",
+            "header": "Score",
             "size": 1
           },
           {
             "align": "center",
             "bindText": "game.totalTime",
             "format": "Number",
-            "header": "Game Total Time",
+            "header": "Time",
             "key": "totalTime",
             "size": 1
           }
