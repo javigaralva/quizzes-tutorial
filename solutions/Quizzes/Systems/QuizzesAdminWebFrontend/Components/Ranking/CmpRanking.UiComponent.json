@@ -30,6 +30,22 @@
         "layout": "container"
       },
       {
+        "children": [
+          {
+            "cardBorder": true,
+            "cardBorderRadius": true,
+            "cardCastShadow": true,
+            "cardSize": "third",
+            "horizontalSeparation": "large",
+            "name": "repeaterRanking",
+            "uiComponentBinding": {
+              "instance": "{record}"
+            },
+            "uiComponentName": "CmpRankingByTopic",
+            "verticalSeparation": "large",
+            "widget": "Repeater"
+          }
+        ],
         "cssClass": "blz-border-top blz-border-right blz-border-left blz-border-bottom blz-border-radius blz-cast-shadow",
         "layout": "container"
       }
