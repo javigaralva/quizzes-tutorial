@@ -22,6 +22,10 @@
         {
           "configParameterName": "TotalRoundsPerGame",
           "value": 5
+        },
+        {
+          "configParameterName": "MaxRankingItemsPerTopic",
+          "value": 3
         }
       ]
     },
