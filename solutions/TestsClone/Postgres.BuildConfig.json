@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "systemName": "Main",
+      "action": "build",
+      "parameters": [
+        {
+          "configParameterName": "ParamBoolean",
+          "value": true
+        },
+        {
+          "configParameterName": "ParamCredentials",
+          "user": "john",
+          "password": "1234"
+        },
+        {
+          "configParameterName": "ParamNumeric",
+          "value": 100
+        },
+        {
+          "configParameterName": "ParamString",
+          "value": "Hello World"
+        },
+        {
+          "configParameterName": "RealMongodb",
+          "value": false
+        },
+        {
+          "configParameterName": "RealRds",
+          "value": true
+        }
+      ]
+    },
+    {
+      "systemName": "RdsDefault",
+      "action": "connect",
+      "connectionData": {
+        "host": "192.168.102.129",
+        "database": "postgresblz",
+        "user": "postgresblazed",
+        "password": "root",
+        "providerName": "Postgres"
+      }
+    }
+  ]
+}
