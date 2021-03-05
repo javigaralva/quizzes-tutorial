@@ -1,3 +1,0 @@
-{
-  "type": "obj(roundId: integer, gameId: integer, quizId: integer, offset: integer, limit: integer)"
-}

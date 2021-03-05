@@ -1,3 +1,0 @@
-{
-  "type": "obj(quizId: integer, topicId: integer, offset: integer, limit: integer, topicName: string, question: string, answer: string)"
-}

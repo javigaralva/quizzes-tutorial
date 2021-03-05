@@ -1,3 +1,0 @@
-{
-  "type": "obj(roundId: integer, gameId: integer, quizId: integer, startTime: datetime, endTime: datetime, wasCorrect: boolean, quiz: Quiz, game: Game)"
-}

@@ -1,3 +1,0 @@
-{
-  "type": "obj(gameId: integer, topicId: integer, offset: integer, limit: integer, topicName: string, playerName: string)"
-}

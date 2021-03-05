@@ -1,3 +1,0 @@
-{
-  "type": "obj(gameId: integer, topicName: string, playerName: string, score: integer, currentRound: integer, totalRounds: integer, isGameEnded: boolean, currentQuiz: RoundQuiz)"
-}
