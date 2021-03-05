@@ -1,0 +1,27 @@
+[
+  {
+    "rdsTableName": "Topic",
+    "topicId": "GeneralKnowledge",
+    "name": "General Knowledge"
+  },
+  {
+    "rdsTableName": "Topic",
+    "topicId": "ScienceAndNature",
+    "name": "Science And Nature"
+  },
+  {
+    "rdsTableName": "Topic",
+    "topicId": "Sports",
+    "name": "Sports"
+  },
+  {
+    "rdsTableName": "Topic",
+    "topicId": "History",
+    "name": "History"
+  },
+  {
+    "rdsTableName": "Topic",
+    "topicId": "Entertainment",
+    "name": "Entertainment"
+  }
+]
