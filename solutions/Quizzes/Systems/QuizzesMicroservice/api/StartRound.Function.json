@@ -63,6 +63,11 @@
           },
           {
             "command": "Set",
+            "expression": "{}",
+            "variableName": "gameState.currentQuiz"
+          },
+          {
+            "command": "Set",
             "expression": "roundIdCreated",
             "variableName": "gameState.currentQuiz.roundId"
           },
