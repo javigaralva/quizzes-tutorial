@@ -9,7 +9,7 @@
     "statements": [
       {
         "command": "Return",
-        "expression": "RdsSelect(Log.Log, This(), [RdsConditional(id == ^args.id, !IsNull(^args.id))], id, ^args.offset, ^args.limit)"
+        "expression": "RdsSelect(Log.Log, This(), [RdsConditional(id == ^args.id, !IsNull(^args.id))], RdsDesc( id ), ^args.offset, ^args.limit)"
       }
     ],
     "typeReturn": "list(LogType)",

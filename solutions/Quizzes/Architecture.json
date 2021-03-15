@@ -31,6 +31,12 @@
       "y": 131
     },
     {
+      "name": "QuizzesGameWebFronted",
+      "type": "WebFrontend",
+      "x": 631,
+      "y": 31
+    },
+    {
       "name": "QuizzesMicroservice",
       "type": "Microservice",
       "x": 635,
@@ -48,6 +54,10 @@
     },
     {
       "fromSystemName": "QuizzesGameMobileApp",
+      "toSystemName": "QuizzesMicroservice"
+    },
+    {
+      "fromSystemName": "QuizzesGameWebFronted",
       "toSystemName": "QuizzesMicroservice"
     },
     {
