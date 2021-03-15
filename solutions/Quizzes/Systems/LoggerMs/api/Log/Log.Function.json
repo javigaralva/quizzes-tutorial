@@ -1,0 +1,42 @@
+{
+  "algorithm": {
+    "parameters": [
+      {
+        "name": "log",
+        "type": "LogArgs"
+      }
+    ],
+    "statements": [
+      {
+        "command": "Set",
+        "expression": "{\n\tfunc: log.function,\n    log: log.log,\n    timestamp: Now()\n}",
+        "variableName": "logToInsert"
+      },
+      {
+        "command": "Return",
+        "expression": "RdsInsert(Log.Log, ^logToInsert )"
+      }
+    ],
+    "typeReturn": "integer",
+    "variables": [
+      {
+        "name": "logToInsert",
+        "type": "LogType"
+      }
+    ]
+  },
+  "routing": {
+    "method": "POST",
+    "parameters": [
+      {
+        "bind": "log",
+        "in": "Body",
+        "name": "body",
+        "remarks": "Log to be created."
+      }
+    ],
+    "path": "/log",
+    "remarks": "Allows to create a new Log.",
+    "responses": []
+  }
+}

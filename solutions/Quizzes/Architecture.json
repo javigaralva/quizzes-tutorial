@@ -1,6 +1,18 @@
 {
   "systems": [
     {
+      "name": "Log",
+      "type": "RelationalDatabase",
+      "x": 990,
+      "y": 402
+    },
+    {
+      "name": "LoggerMs",
+      "type": "Microservice",
+      "x": 774,
+      "y": 404
+    },
+    {
       "name": "QuizzesAdminWebFrontend",
       "type": "WebFrontend",
       "x": 344,
@@ -27,12 +39,20 @@
   ],
   "references": [
     {
+      "fromSystemName": "LoggerMs",
+      "toSystemName": "Log"
+    },
+    {
       "fromSystemName": "QuizzesAdminWebFrontend",
       "toSystemName": "QuizzesMicroservice"
     },
     {
       "fromSystemName": "QuizzesGameMobileApp",
       "toSystemName": "QuizzesMicroservice"
+    },
+    {
+      "fromSystemName": "QuizzesMicroservice",
+      "toSystemName": "LoggerMs"
     },
     {
       "fromSystemName": "QuizzesMicroservice",

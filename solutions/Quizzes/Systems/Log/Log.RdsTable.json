@@ -1,0 +1,35 @@
+{
+  "autoincrementalPrimaryKey": true,
+  "columns": [
+    {
+      "alias": "id",
+      "name": "ID",
+      "primaryKey": true,
+      "type": "integer"
+    },
+    {
+      "alias": "timestamp",
+      "name": "TIMESTAMP",
+      "type": "datetime"
+    },
+    {
+      "alias": "func",
+      "allowNull": true,
+      "name": "FUNC",
+      "type": "string"
+    },
+    {
+      "alias": "log",
+      "allowNull": true,
+      "name": "LOG",
+      "type": "string"
+    }
+  ],
+  "foreignKeys": [],
+  "indexes": [],
+  "isView": false,
+  "primaryKeyName": "LOG_PK",
+  "sequenceName": "LOG_SQ",
+  "tableName": "TBL_LOG",
+  "uniqueKeys": []
+}

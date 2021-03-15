@@ -17,9 +17,17 @@
         "variableName": "game"
       },
       {
+        "command": "Execute",
+        "expression": "LoggerMs.Log( { \n\tfunction: \"UpdateEndRoundGameScore\", \n    log: Concat( \"Game: \", JsonStringify( game ) ) \n})"
+      },
+      {
         "command": "Set",
         "expression": "game.score + endRoundScore",
         "variableName": "newScore"
+      },
+      {
+        "command": "Execute",
+        "expression": "LoggerMs.Log( { \n\tfunction: \"UpdateEndRoundGameScore\", \n    log: Concat( \"GameId: \", ConvertToString( gameId ), \", newScore: \", ConvertToString( newScore ) )\n} )"
       },
       {
         "command": "Execute",

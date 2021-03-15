@@ -8,6 +8,10 @@
     ],
     "statements": [
       {
+        "command": "Execute",
+        "expression": "LoggerMs.Log( { \n\tfunction: \"EndRound\", \n    log: Concat( \"EndRoundParams: \", JsonStringify( params ) ) \n})"
+      },
+      {
         "command": "Set",
         "expression": "GetLastRound( params.gameId )",
         "variableName": "currentRound"
@@ -32,9 +36,17 @@
       {
         "children": [
           {
+            "command": "Execute",
+            "expression": "LoggerMs.Log( { \n\tfunction: \"EndRound\", \n    log: Concat( \"quiz: \", JsonStringify( quiz ) ) \n})"
+          },
+          {
             "command": "Set",
             "expression": "params.userAnswer == quiz.correctAnswer",
             "variableName": "wasCorrect"
+          },
+          {
+            "command": "Execute",
+            "expression": "LoggerMs.Log( { \n\tfunction: \"EndRound\", \n    log: Concat( \"wasCorrect: \", ConvertToString( wasCorrect ) )\n})"
           },
           {
             "command": "Set",
