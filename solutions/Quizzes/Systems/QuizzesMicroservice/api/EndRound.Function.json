@@ -41,7 +41,7 @@
           },
           {
             "command": "Set",
-            "expression": "params.userAnswer == quiz.correctAnswer",
+            "expression": "ConvertToInteger( params.userAnswer ) == ConvertToInteger( quiz.correctAnswer )",
             "variableName": "wasCorrect"
           },
           {
